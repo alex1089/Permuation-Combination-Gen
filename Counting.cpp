@@ -2,8 +2,8 @@
 // Aleksey Leshchuk
 // CISP440
 
-#include <iostream>
-
+#ifndef COUNTING_CPP
+#define COUNTING_CPP
 class Counting {
     public:
 	// constructor
@@ -26,4 +26,4 @@ class Counting {
 	int sets;
 };
 
-
+#endif
