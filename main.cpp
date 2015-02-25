@@ -8,13 +8,43 @@
 
 using namespace std;
 
-void combination(int x, int y);
-void permutation(int x, int y);
+void combination();
+void permutation();
 
 int main() {
-    Combination test2(9,3);
-    Permutation test(7,7);
-    test2.print();
+    int choice;
+    do {
+	cout<<"Select 1 for Combination\nSelect 2 for Permutation\n\n: ";
+	cin>>choice;
+    } while (choice<1 && choice>2 );
+
+    void (*process[2])() = {combination,permutation};
+
+    process[choice]();
     return 0;
 }
 
+void combination(){
+    int x,y;
+    do {
+	cout<<"Enter the range of numbers to choose from (1-9): ";
+	cin>>x;
+	cout<<"Enter how many to numbers to select (1-9) < choose: ";
+	cin>>y;
+    } while ( (x>9 || x<1 ) || (y>9 || y<1)|| (y>x));
+
+    Combination comb(x,y);
+    comb.print();
+}
+void permutation(){
+    int x,y;
+    do {
+	cout<<"Enter the range of numbers to choose from (1-9): ";
+	cin>>x;
+	cout<<"Enter how many to numbers to select (1-9) < choose: ";
+	cin>>y;
+    } while ( (x>9 || x<1 ) || (y>9 || y<1)|| (y>x));
+
+    Permutation perm(x,y);
+    perm.print();
+}
